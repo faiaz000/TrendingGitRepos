@@ -6,6 +6,9 @@ import { RepoListComponent } from './repo-list/repo-list.component';
 import { RepoItemComponent } from './repo-list/repo-item/repo-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from  '@angular/material/card'
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { MatCardModule } from  '@angular/material/card'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

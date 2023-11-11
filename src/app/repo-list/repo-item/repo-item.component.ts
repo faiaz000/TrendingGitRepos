@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-repo-item',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./repo-item.component.scss']
 })
 export class RepoItemComponent {
-
+  @Input() repo: any;
 }

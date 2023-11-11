@@ -1,24 +1,19 @@
-
 .card-content {
     display: flex;
   }
   
-  .flex-container {
-    display: flex;
-    align-items: center;
+  .example-header-image {
+    height: 100px; // Set the height of the image's parent div to 100px
+    flex-shrink: 0; // Prevent the image column from shrinking
+    margin-right: 150px;
   }
   
-  
-  .example-header-image {
-    width: 100px; 
-    height: 100px;
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-    background-position: center;
+  .image-class {
+    height: 100%; // Set the image height to 100% of its parent
+    object-fit: cover; // Use this to maintain aspect ratio
     border-radius: 0px;
-    margin-right: 16px; 
   }
   
   .text-content {
-    flex-grow: 1;
+    flex-grow: 1; // Make the text content take up the remaining width of the div
   }

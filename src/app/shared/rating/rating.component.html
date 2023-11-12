@@ -1,0 +1,5 @@
+<div class="rating">
+    <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="setRating(star)">
+      <i class="material-icons" [ngClass]="{'active': star <= rating}">star</i>
+    </span>
+</div>

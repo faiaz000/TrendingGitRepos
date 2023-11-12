@@ -3,19 +3,19 @@
     <div mat-card-avatar class="example-header-image">
       <img
         class="image-class"
-        [src]="repo.owner.avatar_url"
+        [src]="repo?.owner?.avatar_url"
         alt="Owner's avatar"
       />
     </div>
     <div class="text-content">
-      <mat-card-title>{{ repo.name }}</mat-card-title>
+    <mat-card-title (click)="onTitleClick()">{{ repo?.name }} <span *ngIf="rating > 0">({{ rating }} stars)</span></mat-card-title>
       <p>
-        {{ repo.description }}
+        {{ repo?.description }}
       </p>
       <div class="repo-item">
-        <span class="bordered">Stars: {{ repo.stargazers_count }}</span>
-        <span class="bordered with-margin">Issue: {{ repo.open_issues_count }}</span>
-        <span class="with-margin">Submitted at {{ repo.created_at | date:'yyyy-MM-dd' }}</span>
+        <span class="bordered">Stars: {{ repo?.stargazers_count }}</span>
+        <span class="bordered with-margin">Issue: {{ repo?.open_issues_count }}</span>
+        <span class="with-margin">Submitted at {{ repo?.created_at | date:'yyyy-MM-dd' }}</span>
       </div>
     </div>
   </mat-card-content>

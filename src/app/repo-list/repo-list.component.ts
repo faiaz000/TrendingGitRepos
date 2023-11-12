@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
 import { ViewChild } from '@angular/core';
 import { GitReposService } from '../services/git-repos.service';
 import { Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+import { RepoDetailsModalComponent } from './repo-details-modal/repo-details-modal.component';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { map, takeUntil } from 'rxjs/operators';
 export class RepoListComponent {
   repos$: Observable<any[]>;
   private destroy$ = new Subject<void>();
-  constructor(private gitReposService: GitReposService) { } 
+  constructor(private gitReposService: GitReposService, private dialog: MatDialog) { } 
   totalCount = 0;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -34,6 +36,17 @@ export class RepoListComponent {
         return response.items;
       })
     );
+  }
+
+  openRepoDetailsModal(repo: any): void {
+
+    const dialogRef = this.dialog.open(RepoDetailsModalComponent, {
+      data: { repo }
+    });
+    dialogRef.componentInstance.ratingChange.subscribe((newRating: number) => {
+      repo.rating = newRating;
+    });
+
   }
   
 }

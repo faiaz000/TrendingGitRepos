@@ -1,0 +1,5 @@
+<app-repo-item [repo]="data.repo" [rating]="rating"></app-repo-item>
+<app-rating (ratingChange)="handleRatingChange($event)"></app-rating>
+<div mat-dialog-actions >
+    <button (click)="closeDialog()" mat-button mat-dialog-close>Close</button>
+</div>

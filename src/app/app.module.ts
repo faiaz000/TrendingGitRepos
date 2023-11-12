@@ -8,6 +8,9 @@ import { MatCardModule } from  '@angular/material/card'
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { RatingComponent } from './shared/rating/rating.component';
+import { RepoDetailsModalComponent } from './repo-list/repo-details-modal/repo-details-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -17,6 +20,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AppComponent,
     RepoListComponent,
     RepoItemComponent,
+    RatingComponent,
+    RepoDetailsModalComponent,
     
   ],
   imports: [
@@ -26,7 +31,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HttpClientModule,
     MatCardModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
     
   ],
   providers: [],

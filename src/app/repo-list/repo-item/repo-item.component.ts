@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-repo-item',
@@ -7,4 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class RepoItemComponent {
   @Input() repo: any;
+  @Input() rating = 0;
+
+  @Output() titleClick = new EventEmitter<void>();
+
+  onTitleClick(): void {
+    this.titleClick.emit();
+  }
+  
 }

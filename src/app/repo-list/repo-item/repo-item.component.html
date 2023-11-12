@@ -1,18 +1,22 @@
 <mat-card class="custom-card">
-    <mat-card-content class="card-content">
-      <div mat-card-avatar class="example-header-image">
-      <img class="image-class" [src]="repo.owner.avatar_url" alt="Owner's avatar">
+  <mat-card-content class="card-content">
+    <div mat-card-avatar class="example-header-image">
+      <img
+        class="image-class"
+        [src]="repo.owner.avatar_url"
+        alt="Owner's avatar"
+      />
+    </div>
+    <div class="text-content">
+      <mat-card-title>{{ repo.name }}</mat-card-title>
+      <p>
+        {{ repo.description }}
+      </p>
+      <div class="repo-item">
+        <span class="bordered">Stars: {{ repo.stargazers_count }}</span>
+        <span class="bordered with-margin">Issue: {{ repo.open_issues_count }}</span>
+        <span class="with-margin">Submitted at {{ repo.created_at | date:'yyyy-MM-dd' }}</span>
       </div>
-      <div class="text-content">
-        <mat-card-title>{{ repo.name }}</mat-card-title>
-        <p>
-          {{ repo.description}}
-        </p>
-        <div>
-        <span>Stars: {{ repo.stargazers_count }}</span>
-        <span style="margin-left: 8px;">Issue: {{ repo.open_issues_count }}</span>
-        <span style="margin-left: 8px;">Submitted at {{ repo.created_at }}</span>
-      </div>
-      </div>
-    </mat-card-content>
+    </div>
+  </mat-card-content>
 </mat-card>

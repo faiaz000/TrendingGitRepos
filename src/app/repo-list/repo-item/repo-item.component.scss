@@ -21,3 +21,17 @@
 .custom-card {
   margin: 5px;
 }
+
+.repo-item {
+    span {
+      padding: 2px;
+    }
+  
+    .bordered {
+      border: 2px solid;
+    }
+  
+    .with-margin {
+      margin-left: 8px;
+    }
+}

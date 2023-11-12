@@ -11,6 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { RatingComponent } from './shared/rating/rating.component';
 import { RepoDetailsModalComponent } from './repo-list/repo-details-modal/repo-details-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -29,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatToolbarModule,
     MatCardModule,
     MatIconModule,
     MatPaginatorModule,

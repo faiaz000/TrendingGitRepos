@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="custom-card">
     <mat-card-content class="card-content">
       <div mat-card-avatar class="example-header-image">
       <img class="image-class" [src]="repo.owner.avatar_url" alt="Owner's avatar">
@@ -11,8 +11,8 @@
         <div>
         <span>Stars: {{ repo.stargazers_count }}</span>
         <span style="margin-left: 8px;">Issue: {{ repo.open_issues_count }}</span>
-        <span style="margin-left: 8px;">Submitted at 10.12.2023</span>
+        <span style="margin-left: 8px;">Submitted at {{ repo.created_at }}</span>
       </div>
       </div>
     </mat-card-content>
-    </mat-card>
+</mat-card>

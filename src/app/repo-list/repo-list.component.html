@@ -1,7 +1,7 @@
-<h2>The Most starred repos in the last 30 days</h2>
-<p>Total count: {{(repos | async)?.items.length}}</p>
-<div  class="container" *ngFor="let repo of (repos | async)?.items">
+<h2>The Most starred repos in last 30 days</h2>
+<div class="container" *ngFor="let repo of repos">
     <app-repo-item [repo]="repo"></app-repo-item>  
 </div>
+<mat-paginator [length]="totalCount" [pageSize]="30"></mat-paginator>
 
 

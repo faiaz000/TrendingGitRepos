@@ -3,19 +3,19 @@
 }
 
 .example-header-image {
-  height: 100px; // Set the height of the image's parent div to 100px
-  flex-shrink: 0; // Prevent the image column from shrinking
+  height: 100px; 
+  flex-shrink: 0; 
   margin-right: 150px;
 }
 
 .image-class {
-  height: 100%; // Set the image height to 100% of its parent
-  object-fit: cover; // Use this to maintain aspect ratio
+  height: 100%; 
+  object-fit: cover;
   border-radius: 0px;
 }
 
 .text-content {
-  flex-grow: 1; // Make the text content take up the remaining width of the div
+  flex-grow: 1; 
 }
 
 .custom-card {

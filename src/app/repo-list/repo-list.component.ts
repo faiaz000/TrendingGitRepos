@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewChild } from '@angular/core';
@@ -14,7 +14,7 @@ import { GithubRepo, RatedGithubRepo } from '../interfaces/github-api.interface'
   templateUrl: './repo-list.component.html',
   styleUrls: ['./repo-list.component.scss']
 })
-export class RepoListComponent {
+export class RepoListComponent implements OnInit {
   repos$: Observable<RatedGithubRepo[]>;
   private destroy$ = new Subject<void>();
   constructor(private gitReposService: GitReposService, private dialog: MatDialog) { } 
@@ -22,12 +22,15 @@ export class RepoListComponent {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  ngOnInit(): void {
+    this.repos$ = this.loadRepos();
+  }
   ngAfterViewInit(): void {
+    
     this.paginator.page.pipe(takeUntil(this.destroy$)).subscribe(() => {
       this.repos$ = this.loadRepos(this.paginator.pageIndex + 1);
     });
   
-    this.repos$ = this.loadRepos();
   }
   
   loadRepos(page: number = 1): Observable<GithubRepo[]> {

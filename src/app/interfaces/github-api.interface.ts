@@ -12,6 +12,7 @@ export interface GithubRepo {
 
 export interface GithubRepoSearchResults {
   total_count: number;
+  incomplete_results: boolean;
   items: GithubRepo[];
 }
 export interface RatedGithubRepo extends GithubRepo {

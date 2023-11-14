@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class RatingComponent {
   
   @Output() ratingChange = new EventEmitter<number>();
-  rating = 0;
+  rating:number = 0;
 
   setRating(rating: number): void {
     this.rating = rating;

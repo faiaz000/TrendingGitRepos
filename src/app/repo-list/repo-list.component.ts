@@ -4,8 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ViewChild } from '@angular/core';
 import { GitReposService } from '../services/git-repos.service';
 import { Observable, Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil, tap } from 'rxjs/operators';
 import { RepoDetailsModalComponent } from './repo-details-modal/repo-details-modal.component';
+import { GithubRepo, RatedGithubRepo } from '../interfaces/github-api.interface';
 
 
 @Component({
@@ -14,10 +15,10 @@ import { RepoDetailsModalComponent } from './repo-details-modal/repo-details-mod
   styleUrls: ['./repo-list.component.scss']
 })
 export class RepoListComponent {
-  repos$: Observable<any[]>;
+  repos$: Observable<RatedGithubRepo[]>;
   private destroy$ = new Subject<void>();
   constructor(private gitReposService: GitReposService, private dialog: MatDialog) { } 
-  totalCount = 0;
+  totalCount: number = 0;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -29,16 +30,16 @@ export class RepoListComponent {
     this.repos$ = this.loadRepos();
   }
   
-  loadRepos(page: number = 1): Observable<any[]> {
+  loadRepos(page: number = 1): Observable<GithubRepo[]> {
     return this.gitReposService.getMostStarredRepos(String(page)).pipe(
-      map(response => {
-        this.totalCount = response.total_count;
-        return response.items;
-      })
+      tap(results => {
+        this.totalCount = results.total_count;
+      }),
+      map(results => results.items)
     );
   }
 
-  openRepoDetailsModal(repo: any): void {
+  openRepoDetailsModal(repo: RatedGithubRepo): void {
 
     const dialogRef = this.dialog.open(RepoDetailsModalComponent, {
       data: { repo }

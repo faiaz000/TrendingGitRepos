@@ -5,9 +5,16 @@ This project is a small web application built with Angular and Material UI. It f
 ## Features
 
 - Lists the most starred GitHub repositories created in the last 30 days.
+- For each repository, the following details are displayed:
+  - Repository name
+  - Repository description
+  - Number of stars for the repository
+  - Number of issues for the repository
+  - Username and avatar of the owner
 - Clicking on a repository opens it in a modal.
 - Users can rate the repository using a 5-star rating system.
 - The rating given by the user is reflected on the repository item when the modal window is closed.
+- Pagination is implemented. Users can keep scrolling and new results will appear.
 
 ## Technologies Used
 

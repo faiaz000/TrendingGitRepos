@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { By } from '@angular/platform-browser';
 import { GithubRepo } from 'src/app/interfaces/github-api.interface';
 import { RepoDetailsModalComponent } from './repo-details-modal.component';
 import { RepoItemComponent } from '../repo-item/repo-item.component';

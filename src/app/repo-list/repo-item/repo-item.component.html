@@ -7,6 +7,8 @@
         alt="Owner's avatar"
         data-cy="repo-avatar"
       />
+      <mat-card-title>{{repo.owner.login}}</mat-card-title>
+      
     </div>
     <div class="text-content">
     <mat-card-title (click)="onTitleClick()" data-cy="repo-title">{{ repo?.name }} <span data-cy="repo-rating" *ngIf="rating > 0">({{ rating }} stars)</span></mat-card-title>

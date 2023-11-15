@@ -1,27 +1,49 @@
 # TrendingGitRepos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+This project is a small web application built with Angular and Material UI. It fetches and lists the most starred GitHub repositories that were created in the last 30 days. The data is fetched directly from the GitHub API.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Lists the most starred GitHub repositories created in the last 30 days.
+- Clicking on a repository opens it in a modal.
+- Users can rate the repository using a 5-star rating system.
+- The rating given by the user is reflected on the repository item when the modal window is closed.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Material UI
+- Cypress for end-to-end testing
+- Jasmine and Karma for unit testing
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To get a local copy up and running, follow these steps:
 
-## Running unit tests
+1. Clone the repository.
+2. Install the dependencies with `npm install`.
+3. Start the local server with `ng serve`.
+4. Open your browser and navigate to `http://localhost:4200`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Running Tests
 
-## Running end-to-end tests
+- Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Run `npm run e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+For Cypress, you can use the following commands:
 
-## Further help
+- `npm run cypress:open` - Opens the Cypress Test Runner.
+- `npm run cypress:run` - Runs Cypress tests in the command line.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Test Results
+
+For the latest test results, please refer to the "`Test results`" folder provided in the repository. These include results from both unit tests and end-to-end tests.
+
+## API Reference
+
+The GitHub API is used to fetch the most starred repositories created in the last 30 days. The API endpoint is: `https://api.github.com/search/repositories?q=created:>{date}&sort=stars&order=desc`, where `{date}` is the date 30 days ago.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
